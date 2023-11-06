@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import PersonUtil from '../util/PersonUtil';
+import { useSelector } from 'react-redux';
 
 function Copyright(props) {
 
@@ -34,6 +35,8 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignInSide() {
+  let users = useSelector(state=> state.users);
+  console.log('users',users);
   let handleInput = function(event){
     console.log(event.target.name);
     console.log(event.target.value);
