@@ -5,29 +5,37 @@ import SignUp from './modules/SignUp';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import usersReducer, { addUser } from './store/users/usersSlice';
+import Dashboard from './modules/Dashboard';
 
 function App() {
-  let [users, setUsers] = useState([]);
+  //let [users, setUsers] = useState([]);
   let users1 = useSelector(state => state.users);
+  let pageStatus = useSelector(state => state.pageStatus);
   let dispatch = useDispatch();
-  console.log(usersReducer.action);
   
   useEffect(()=>{
     fetch('https://test-quiz-app-2c5e5-default-rtdb.firebaseio.com/users.json',{method: 'GET'})
             .then(response=>response.json())
             .then((data)=>{
-                let usersArr = [];
                 for(let key in data){
                   dispatch(addUser(data[key]));
                 }
             }
             );
   },[]);
-  console.log('usersState',users);
+  console.log('usersState with redux',users1);
+  let getPage = () => {
+    if(pageStatus.isLoginPage)
+     return <SignInSide />
+    else if(pageStatus.isSignupPage)
+      return <SignUp />
+  }
   return (
     <div className="App">
-      <SignInSide />
-      <SignUp />
+      {pageStatus.isLoggedIn ? <Dashboard /> : 
+      getPage()
+        
+      }
     </div>
   );
 }

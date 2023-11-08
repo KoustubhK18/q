@@ -14,6 +14,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import PersonUtil from '../util/PersonUtil';
+import { useDispatch } from 'react-redux';
+import { toggleLoginSignupPage } from '../store/users/pageStatusSlice';
 
 function Copyright(props) {
   return (
@@ -44,6 +46,7 @@ export default function SignUp() {
     });
   };
   
+  let dispatch = useDispatch();
   let [person, setPerson] = React.useState({});
   let handleInput = function(event){
     console.log(event.target.name);
@@ -54,6 +57,13 @@ export default function SignUp() {
     });
     console.log(person);
   };
+
+  const handleSigninClick = function(){
+    dispatch(toggleLoginSignupPage({
+      loginClicked : true,
+      signupClicked : false
+    }));
+  }
 
 
   return (
@@ -139,7 +149,7 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link onClick={handleSigninClick} variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>

@@ -1,10 +1,13 @@
 import { useState } from "react";
+import {  useSelector } from "react-redux/es/hooks/useSelector";
 
 //let [users, setUsers] = useState([]); 
 
-let users = [];
 
-let PersonUtil = {
+
+function PersonUtil() {
+    let users = useSelector(state => state.users);
+    /*
     checkUser: async function(passedData){
         let requestOptions = {
             method: 'GET'
@@ -22,11 +25,19 @@ let PersonUtil = {
         return status;
             
     },
-    handleLogin: function(data){
-        let status = this.checkUser();
-        console.log(status);
-    },
-    handleSignup: function(data){
+    */
+    this.handleLogin = function(data){
+        let status = false;
+        users.forEach(user => {
+            if(user.email === data.email && user.password == data.password){
+                status = true;
+                return status;
+            }
+        });
+        console.log('handleLoginstate : '+status);
+        return status;
+    };
+    this.handleSignup = function(data){
         console.log(data);
         let dataToPut = {[data.firstName+data.lastName]: data}
         let requestOptions = {
@@ -39,4 +50,5 @@ let PersonUtil = {
             .then(data=>console.log('data',data))
     }
 }
+
 export default PersonUtil;

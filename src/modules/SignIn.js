@@ -13,8 +13,11 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+
+import { useDispatch, useSelector } from 'react-redux';
 import PersonUtil from '../util/PersonUtil';
-import { useSelector } from 'react-redux';
+import SweetAlert2 from 'react-sweetalert2';
+import { setLogin, toggleLoginSignupPage } from '../store/users/pageStatusSlice';
 
 function Copyright(props) {
 
@@ -36,26 +39,49 @@ const defaultTheme = createTheme();
 
 export default function SignInSide() {
   let users = useSelector(state=> state.users);
-  console.log('users',users);
-  let handleInput = function(event){
-    console.log(event.target.name);
-    console.log(event.target.value);
-    setPerson(person=>{
-      person[event.target.name] = event.target.value;
-      return person;
-    });
-    console.log(person);
-  };
+  let pageStatus = useSelector(state=> state.pageStatus);
+  let dispatch = useDispatch();
 
   let [person, setPerson] = React.useState({});
+  const [swalProps, setSwalProps] = React.useState({});
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    PersonUtil.handleLogin({
+    let status = handleLogin({
       email: data.get('email'),
       password: data.get('password'),
     });
+    setSwalProps({
+      show: true,
+      title: status ? 'Successfully Logged in' : 'Login failed',
+      text: status ? 'Welcome '+data.get('email') : 'Please check your email and password',
+      icon: status ? 'success' : 'error'
+    });
+    //Need to reload page to display alert for next time login attempt
+    if(!status){
+      dispatch(setLogin(false));
+      setTimeout(()=>window.location.reload(false),1000);
+    } else{
+      dispatch(setLogin(true));
+    }
   };
+  const handleLogin = function(data){
+    let status = false;
+    users.forEach(user => {
+        if(user.email === data.email && user.password == data.password){
+            status = true;
+            return status;
+        }
+    });
+    console.log('handleLoginstate : '+status);
+    return status;
+  };
+  const handleSignupClick = function(){
+    dispatch(toggleLoginSignupPage({
+      loginClicked : false,
+      signupClicked : true
+    }));
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -102,7 +128,6 @@ export default function SignInSide() {
                 autoComplete="email"
                 autoFocus
                 value={person.email}
-                onChange={handleInput}
               />
               <TextField
                 margin="normal"
@@ -114,7 +139,7 @@ export default function SignInSide() {
                 id="password"
                 autoComplete="current-password"
                 value={person.password}
-                onChange={handleInput}
+                //onChange={handleInput}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -135,7 +160,7 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link onClick={handleSignupClick} variant="body2">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
@@ -145,6 +170,7 @@ export default function SignInSide() {
           </Box>
         </Grid>
       </Grid>
+      <SweetAlert2 {...swalProps}/>
     </ThemeProvider>
   );
 }
