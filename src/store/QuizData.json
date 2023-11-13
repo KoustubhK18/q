@@ -1,0 +1,89 @@
+{
+    "data": [
+        {
+            "category": ["technical","frontend","coding"],
+            "title": "React Quiz",
+            "image": "https://e1.pxfuel.com/desktop-wallpaper/556/915/desktop-wallpaper-how-to-install-reactjs-frontend.jpg",
+            "description": "Test your knowledge with this React Quiz. You can also get rewarded with some points",
+            "quizQuestions": [
+                {
+                    "question": "",
+                    "options": [
+                        {
+                            "description": "",
+                            "isCorrect": false 
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "category": ["technical","coding"],
+            "title": "Javascript Quiz",
+            "image": "https://e1.pxfuel.com/desktop-wallpaper/401/768/desktop-wallpaper-of-javascript-javascript.jpg",
+            "description": "Test your knowledge with this Javascript Quiz. You can also get rewarded with some points",
+            "quizQuestions": [
+                {
+                    "question": "",
+                    "options": [
+                        {
+                            "description": "",
+                            "isCorrect": false 
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "category": ["technical","coding"],
+            "title": "Java Quiz",
+            "image": "https://e0.pxfuel.com/wallpapers/411/344/desktop-wallpaper-black-java-for-tech-java-programming.jpg",
+            "description": "Test your knowledge with this Java Quiz. You can also get rewarded with some points",
+            "quizQuestions": [
+                {
+                    "question": "",
+                    "options": [
+                        {
+                            "description": "",
+                            "isCorrect": false 
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "category": ["technical","frontend","coding"],
+            "title": "Angular Quiz",
+            "image": "https://e0.pxfuel.com/wallpapers/572/959/desktop-wallpaper-new-features-of-angular-8.jpg",
+            "description": "Test your knowledge with this Angular Quiz. You can also get rewarded with some points",
+            "quizQuestions": [
+                {
+                    "question": "",
+                    "options": [
+                        {
+                            "description": "",
+                            "isCorrect": false 
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "category": ["technical","frontend","coding"],
+            "title": "Vue Quiz",
+            "image": "https://e0.pxfuel.com/wallpapers/672/404/desktop-wallpaper-vuejs-dark-vue-theme-minimalism-clean-cool-minimalism-react-js.jpg",
+            "description": "Test your knowledge with this Vue Quiz. You can also get rewarded with some points",
+            "quizQuestions": [
+                {
+                    "question": "",
+                    "options": [
+                        {
+                            "description": "",
+                            "isCorrect": false 
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
