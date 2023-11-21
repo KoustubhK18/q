@@ -34,7 +34,6 @@ function App() {
     <div className="App">
       {pageStatus.isLoggedIn ? <Dashboard /> : 
       getPage()
-        
       }
     </div>
   );

@@ -7,10 +7,190 @@
             "description": "Test your knowledge with this React Quiz. You can also get rewarded with some points",
             "quizQuestions": [
                 {
-                    "question": "",
+                    "question": "What is React?",
                     "options": [
                         {
-                            "description": "",
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Framework",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": true 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        }
+                    ]
+                },
+                {
+                    "question": "What is React?",
+                    "options": [
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Framework",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": true 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        }
+                    ]
+                },
+                {
+                    "question": "What is React?",
+                    "options": [
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Framework",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": true 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        }
+                    ]
+                },
+                {
+                    "question": "What is React?",
+                    "options": [
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Framework",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": true 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        }
+                    ]
+                },
+                {
+                    "question": "What is React?",
+                    "options": [
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Framework",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": true 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        }
+                    ]
+                },
+                {
+                    "question": "What is React?",
+                    "options": [
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Framework",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": true 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        }
+                    ]
+                },
+                {
+                    "question": "What is React?",
+                    "options": [
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Framework",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": true 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        }
+                    ]
+                },
+                {
+                    "question": "What is React?",
+                    "options": [
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Framework",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": true 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        }
+                    ]
+                },
+                {
+                    "question": "What is React?",
+                    "options": [
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Framework",
+                            "isCorrect": false 
+                        },
+                        {
+                            "description": "Frontend Library",
+                            "isCorrect": true 
+                        },
+                        {
+                            "description": "Frontend Library",
                             "isCorrect": false 
                         }
                     ]

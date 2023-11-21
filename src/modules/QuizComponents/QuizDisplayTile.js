@@ -6,12 +6,21 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Chip, Grid } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { setData } from '../../store/quiz/quizDataSlice';
 
 
 export default function QuizDisplayTile(props){
+
+    const dispatch = useDispatch();
+    const performQuizEnter = ()=>{
+        console.log(props.data);
+        console.log(props.data.title+" entered");
+        dispatch(setData({isQuizSelected: true, quizQuestions: props.data.quizQuestions, title: props.data.title}));
+    };
     return(
     <Grid  item xs={4}> 
-        <Card sx={{ maxWidth: 345 }} style={{ boxShadow:'2px 2px 10px cyan'}}>
+        <Card sx={{ maxWidth: 345 }} style={{ boxShadow:'2px 2px 10px #e8e6e6'}}>
         <CardMedia
             component="img"
             height="140"
@@ -30,7 +39,7 @@ export default function QuizDisplayTile(props){
             </Typography>
         </CardContent>
         <CardActions>
-            <Button size="large">Enter Quiz</Button>
+            <Button size="large" onClick={performQuizEnter}>Enter Quiz</Button>
         </CardActions>
         </Card>
     </Grid>
